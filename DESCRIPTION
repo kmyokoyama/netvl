@@ -1,0 +1,10 @@
+Package: netvl
+Type: Package
+Title: Simple Network Value Models
+Version: 0.0.1
+Date: 2016-02-07
+Author: Kazuki Yokoyama
+Maintainer: Kazuki Yokoyama <kazuki.yokoyama@ufrgs.br>
+Description: Simple data and functions concerning networks growth.
+License: GPL-2
+Imports: ggplot2, scales
