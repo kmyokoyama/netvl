@@ -6,7 +6,7 @@ First, you need to get all the sources from GitHub. It can be done by cloning th
 git clone git@github.com:kmyokoyama/netvl.git
 ```
 
-From the parent directory of *netvl/*, run:
+From the parent directory of *netvl/* run:
 
 ```
 R CMD build netvl
@@ -19,7 +19,7 @@ comprising errors:
 R CMD check netvl_<version>.tar.gz
 ```
 
-where <version> is the version of the package. If everything looks fine, you're ready to install it in R. In R console, type:
+where \<version\> is the version of the package. If everything looks fine, you're ready to install it in R. In R console, type:
 
 ```
 install.packages("pathtotargz", repos = NULL, type="source")
