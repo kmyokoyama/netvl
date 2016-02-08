@@ -10,6 +10,10 @@ netvl.write.csv <- function(data, file.name) {
 }
 
 netvl.to.ts <- function(data, col.name) {
+    if (!(col.name %in% colnames(data))) {
+        stop("No such type in data frame.")
+    }
+    
     col <- data[, col.name]
     
     if (!("date" %in% colnames(data))) {

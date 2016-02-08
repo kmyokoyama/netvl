@@ -1,5 +1,9 @@
 netvl.plot.xy <- function(data, y.type, regression = TRUE) {
-    if(requireNamespace("ggplot2", quietly = TRUE)
+    if (!(ts.type %in% colnames(data))) {
+        stop("No such type in data frame.")
+    }
+    
+    if (requireNamespace("ggplot2", quietly = TRUE)
        & requireNamespace("scales", quietly = TRUE)) {
         if (y.type == "revenue") {
             if (!("revenue" %in% colnames(data))) {
@@ -23,7 +27,7 @@ netvl.plot.xy <- function(data, y.type, regression = TRUE) {
         p <- p + ggplot2::xlab("Monthly Active Users (in million)")
         p <- p + ggplot2::ylab(y.label)
         
-        if(regression)
+        if (regression)
             p <- p + ggplot2::geom_smooth(method = "lm", color = "purple")
         
         print(p)
@@ -31,7 +35,11 @@ netvl.plot.xy <- function(data, y.type, regression = TRUE) {
 }
 
 netvl.plot.ts <- function(data, ts.type) {
-    if(requireNamespace("ggplot2", quietly = TRUE)
+    if (!(ts.type %in% colnames(data))) {
+        stop("No such type in data frame.")
+    }
+    
+    if (requireNamespace("ggplot2", quietly = TRUE)
        &requireNamespace("scales", quietly = TRUE)) {
         if (ts.type == "maus") {
             if (!("maus" %in% colnames(data))) {
