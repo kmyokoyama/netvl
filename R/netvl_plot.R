@@ -34,7 +34,7 @@ netvl.plot.xy <- function(data, y.type, regression = TRUE) {
     }
 }
 
-netvl.plot.ts <- function(data, ts.type = NULL, ylab = NULL) {
+netvl.plot.ts <- function(data, ts.type = NULL, ylab = NULL, title = NULL) {
     if (!is.null(ts.type)) {
         if (!(ts.type %in% colnames(data))) {
             stop("No such type in data frame.")
@@ -82,13 +82,19 @@ netvl.plot.ts <- function(data, ts.type = NULL, ylab = NULL) {
         if(!is.null(ylab)) {
             y.label = ylab
         }
+        if(!is.null(title)) {
+            title.label = title
+        }
+        else {
+            title.label = "Time series"
+        }
         
         p <- p + ggplot2::theme_light()
         p <- p + ggplot2::geom_point(size = 3, color = "black")
         p <- p + ggplot2::geom_point(size = 2, color = "darkblue")
         p <- p + ggplot2::geom_line(color = "darkblue")
         p <- p + ggplot2::xlab("Date") + ggplot2::ylab(y.label)
-        p <- p + ggplot2::labs(title = "Time series")
+        p <- p + ggplot2::labs(title = title.label)
         
         print(p)
     }
