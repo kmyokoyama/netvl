@@ -6,7 +6,8 @@ netvl.read.csv <- function(file.name) {
 }
 
 netvl.write.csv <- function(data, file.name) {
-    write.table(x = data, file  = file.name, sep = ", ", row.names = F)
+    write.table(x = data, file  = file.name,
+                sep = ", ", row.names = F, col.names = T, quote = F)
 }
 
 netvl.to.ts <- function(data, col.name) {
