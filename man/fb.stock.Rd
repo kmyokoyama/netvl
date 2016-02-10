@@ -5,7 +5,7 @@
 Facebook, Inc. Monthly Stock Prices Data Frame
 }
 \description{
-Data frame containing data from stock prices in an monthly interval.
+Data frame containing data from stock prices in a monthly interval.
 }
 \usage{data(fb.stock)}
 \format{
