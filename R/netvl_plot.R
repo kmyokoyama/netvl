@@ -34,7 +34,7 @@ netvl.plot.xy <- function(data, y.type, regression = TRUE) {
     }
 }
 
-netvl.plot.ts <- function(data, ts.type = NULL, ylab = NULL, title = NULL, print = T) {
+netvl.plot.ts <- function(data, ts.type = NULL, ylab = NULL, title = NULL, print = TRUE) {
     if (!is.null(ts.type)) {
         if (!(ts.type %in% colnames(data))) {
             stop("No such type in data frame.")

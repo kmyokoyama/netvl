@@ -8,7 +8,7 @@ Plotting Time-Series objects
 Plotting method for data frames with date and another variable of interest.
 }
 \usage{
-netvl.plot.ts(data, ts.type = NULL, ylab = NULL, title = NULL)
+netvl.plot.ts(data, ts.type = NULL, ylab = NULL, title = NULL, print = TRUE)
 }
 
 \arguments{
@@ -16,6 +16,7 @@ netvl.plot.ts(data, ts.type = NULL, ylab = NULL, title = NULL)
   \item{ts.type}{variable of interest. It allows "maus", "revenue" or "costs" options. If 'data' is a 'ts' object, then ts.type must be NULL.}
   \item{ylab}{Vertical axis (y) label.}
   \item{title}{Main title label.}
+  \item{print}{TRUE if it should automatically print the plot or FALSE if it should return the plot object instead.}
 }
 \author{Kazuki Yokoyama}
 \seealso{
