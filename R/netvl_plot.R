@@ -73,6 +73,11 @@ netvl.plot.ts <- function(data, ts.type = NULL, ylab = NULL) {
             y.label <- "Total costs (in million USD)"
             p <- p + ggplot2::scale_x_date(breaks = "1 year", labels = scales::date_format("%b-%Y"))
         }
+        else {
+            p <- ggplot2::ggplot(data, ggplot2::aes_string(x = "date", y = ts.type))
+            y.label <- ts.type
+            p <- p + ggplot2::scale_x_date(breaks = "1 year", labels = scales::date_format("%b-%Y"))
+        }
 
         if(!is.null(ylab)) {
             y.label = ylab
