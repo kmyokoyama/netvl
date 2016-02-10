@@ -10,7 +10,7 @@ netvl.write.csv <- function(data, file.name) {
                 sep = ", ", row.names = F, col.names = T, quote = F)
 }
 
-netvl.to.ts <- function(data, col.name) {
+netvl.to.ts <- function(data, col.name, interval = "quarter") {
     if (!(col.name %in% colnames(data))) {
         stop("No such type in data frame.")
     }
@@ -23,10 +23,32 @@ netvl.to.ts <- function(data, col.name) {
     
     start.date <- as.character(data[1, "date"])
     date.split <- unlist(strsplit(start.date, split = "-"))
+
     year <- as.numeric(date.split[1])
     month <- as.numeric(date.split[2])
-    quarter <- floor((month-1)/3)+1
-    ts <- ts(col, start=c(year, quarter), frequency=4)
+    day <- as.numeric(date.split[3])
+
+    if (interval == "quarter") {
+        start <- c(year, floor((month-1)/3)+1)
+        freq = 4
+    }
+    else if (interval == "year") {
+        start <- c(year)
+        freq = 1
+    }
+    else if (interval == "month") {
+        start <- c(year, month)
+        freq = 12
+    }
+    else if (interval == "day") {
+        start <- c(year, month, day)
+        freq = 365
+    }
+    else {
+        stop("Indefined interval.")
+    }
+    
+    ts <- ts(col, start = start, frequency = freq)
     
     return(ts)
 }
