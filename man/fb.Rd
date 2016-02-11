@@ -2,7 +2,7 @@
 \alias{fb}
 \docType{data}
 \title{
-Facebook Data Frame
+Facebook, Inc. Data Frame
 }
 \description{
 Data frame containing data of Date, Monthly Active Users (MAUs), Revenue and Total Costs of Facebook Co.

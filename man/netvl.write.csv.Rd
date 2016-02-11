@@ -2,7 +2,7 @@
 \alias{netvl.write.csv}
 
 \title{
-Write data frame to CSV files.
+Write data frame to CSV files
 }
 \description{
 Write R data frame to CSV file.

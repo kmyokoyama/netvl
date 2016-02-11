@@ -2,7 +2,7 @@
 \alias{netvl.plot.xy}
 
 \title{
-Plotting variables against Monthly Active Users.
+Plotting variables against Monthly Active Users
 }
 \description{
 Plotting method for data frames with maus and another variable of interest.
