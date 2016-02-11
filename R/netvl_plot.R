@@ -6,18 +6,16 @@ netvl.plot.xy <- function(data, y.type, regression = TRUE) {
     if (requireNamespace("ggplot2", quietly = TRUE)
        & requireNamespace("scales", quietly = TRUE)) {
         if (y.type == "revenue") {
-            if (!("revenue" %in% colnames(data))) {
-                stop("No such type in data frame.")
-            }
             p <- ggplot2::ggplot(data, ggplot2::aes_string(x = "maus", y = "revenue"))
             y.label <- "Revenue (in million USD)"
         }
         else if (y.type == "costs") {
-            if (!("costs" %in% colnames(data))) {
-                stop("No such type in data frame.")
-            }
             p <- ggplot2::ggplot(data, ggplot2::aes_string(x = "maus", y = "costs"))
             y.label <- "Total costs (in million USD)"
+        }
+        else {
+            p <- ggplot2::ggplot(data, ggplot2::aes_string(x = "maus", y = y.type))
+            y.label <- y.type
         }
         
         p <- p + ggplot2::theme_gray()
