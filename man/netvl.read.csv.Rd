@@ -6,7 +6,7 @@ Read CSV files containing data.
 }
 \description{
 Read CSV files containing formatted data. It must contain header and at least the variable "date"
-in the format "%Y-%m-%d" (ie, 4-digit year, month and day, separated by "-").
+in the format "\%Y-\%m-\%d" (ie, 4-digit year, month and day, separated by "-").
 }
 \usage{
 netvl.read.csv(file.name)
